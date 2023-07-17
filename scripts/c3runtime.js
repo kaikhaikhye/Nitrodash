@@ -4780,6 +4780,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Bullet.Acts.SetAngleOfMotion,
 		C3.Behaviors.Bullet.Cnds.CompareTravelled,
 		C3.Plugins.Shape3D.Cnds.IsOverlapping,
+		C3.Behaviors.Car.Acts.Stop,
 		C3.Plugins.Sprite.Cnds.OnCollision
 	];
 };
@@ -4824,11 +4825,13 @@ self.C3_JsPropNameTable = [
 	{lap: 0},
 	{angleDir: 0},
 	{randomOffset: 0},
+	{Monster: 0},
 	{MonsterCollision: 0},
 	{MonsterSpriteBurger: 0},
 	{MonsterModel: 0},
 	{CheckpointNumber: 0},
 	{Checkpoint: 0},
+	{MonsterSpriteBird: 0},
 	{Skipper: 0},
 	{TouchDevice: 0},
 	{CharacterSelect: 0},
@@ -4985,6 +4988,8 @@ self.C3_ExpressionFuncs = [
 		() => "Map Level",
 		() => "PlayerModel",
 		() => "MonsterModel",
+		() => "Bird",
+		() => "Burger",
 		() => "Movement",
 		() => "RightTurn",
 		() => "LeftTurn",
@@ -5016,7 +5021,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => f0((-25), 25);
+			return () => f0((-20), 20);
 		},
 		() => "PickUps",
 		p => {
